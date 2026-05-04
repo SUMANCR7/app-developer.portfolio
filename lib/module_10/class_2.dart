@@ -8,56 +8,49 @@ class Mod_10_Class_2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: Text('AppBar', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-        centerTitle: true,
+        title: Text('AppBar', style:TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+      centerTitle: true,
       ),
 
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text('Hello World!', style: TextStyle(fontSize: 20),)),
 
-          Align(
-              alignment: Alignment.bottomLeft,
-              child: Text('Hello Moon!', style: TextStyle(fontSize: 20),)),
+          Center(child: Text('Hello World!', style:TextStyle(fontSize: 24, fontWeight:FontWeight.bold, color: Colors.red),)),
 
-          Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.all(20),
-            
-            alignment: Alignment.topRight,
-            height: 100, width: 100,
-            //color: Colors.blue,
-            child: Text('Hello Flutter', style: TextStyle(fontSize: 18),),
+         Align(
+             alignment: Alignment.topRight,
+             child: Text('Hello Moon!', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.green),)),
 
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              border: Border.all(width: 5, color: Colors.grey),
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
-              
-              gradient: LinearGradient(colors: [Colors.blue, Colors.red],
-              begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  spreadRadius: 10,
-                  //offset: Offset(0, 5),
-                  blurRadius: 5
-                )
-              ]
+        Container(
 
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(10),
+          margin: EdgeInsets.all(20),
+          height: 150,
+          width: 150,
+          
+          child: Text('Hello flutter', style: TextStyle(color: Colors.white, fontSize: 22, ),),
+        
+          decoration: BoxDecoration(
+
+            gradient: LinearGradient(colors: [Colors.green, Colors.blue],
+            begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
             ),
 
-          )
-          
-          
+          color: Colors.green,
+          border: Border.all(width: 5, color: Colors.red),
+          borderRadius: BorderRadius.only(topRight: Radius.circular(50), bottomLeft: Radius.circular(50)),
+            boxShadow: [
+              BoxShadow(color: Colors.black,
+                  offset: Offset(10, 0),blurRadius: 15)
+            ]
+        ),
+        ),
+
         ],
       ),
-
-
     );
   }
 }
