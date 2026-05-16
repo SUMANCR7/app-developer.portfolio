@@ -7,6 +7,8 @@ import 'package:flutter_166/module_10/class_2.dart';
 import 'package:flutter_166/module_10/class_3.dart';
 import 'package:flutter_166/module_11/class_1.dart';
 import 'package:flutter_166/module_11/class_2.dart';
+import 'package:flutter_166/module_11/class_3.dart';
+import 'package:flutter_166/module_11/custom_widget.dart';
 import 'package:flutter_166/module_9/class-3.dart';
 //import 'package:flutter_166/module_9/class-3.da';
 
@@ -19,7 +21,7 @@ class MyAPP extends StatelessWidget {
 
 
   title: 'Flutter 16',
-  home: Mod_11_Class_2(),
+  home: CustomWG(),
       //theme: ThemeData.dark(),
 
     );
