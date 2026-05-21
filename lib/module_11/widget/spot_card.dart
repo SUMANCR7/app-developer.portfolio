@@ -1,37 +1,36 @@
 import 'package:flutter/material.dart';
 
-class Spot_Card extends StatelessWidget {
-  final String imageAddressLink, title, rating;
-  const Spot_Card({
-    super.key, required this.imageAddressLink, required this.title, required this.rating,
+class spot_card extends StatelessWidget {
+  final String imageURL, title, rating;
+  const spot_card({
+    super.key, required this.imageURL, required this.title, required this.rating,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.blue,
+    return Container(
+
+      height: 250,
+
+
       child: ClipRRect(
         child: Stack(
           children: [
-
             Container(
-              height: 150,
-                width: 500,
-                child: Positioned(child: Image.network(imageAddressLink),height: 100,width: 600,)),
+                height: 600, width: 600,
+                child: Image.network(imageURL)),
             Container(
-              height: 150,
-              color: Colors.transparent,
-
+              height: 200,
+              color: Colors.black12,
             ),
             Positioned(
-
                 top: 10, left: 20,
-                child: Text(title,style: TextStyle(fontSize: 18, color: Colors.white),)),
+                child: Text(title,style: TextStyle(fontSize: 20,color: Colors.brown,fontWeight: FontWeight.bold),)),
             Positioned(
-
                 top: 10, right: 20,
-                child: Text('⭐ ${rating}' ,style: TextStyle(fontSize: 18, color: Colors.white,fontWeight: FontWeight.bold,))
-            ),
-                  ],
+                child: Text('⭐ ${rating}',style: TextStyle(fontSize: 20,color: Colors.brown,fontWeight: FontWeight.bold),))
+
+          ],
         ),
       ),
     );
