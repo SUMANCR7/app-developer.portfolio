@@ -1,5 +1,16 @@
 
 import'package:flutter/material.dart';
+import 'package:flutter_166/Eid_Practices/mod_10/cls_1.dart';
+import 'package:flutter_166/Eid_Practices/mod_10/cls_2.dart';
+import 'package:flutter_166/Eid_Practices/mod_10/cls_3.dart';
+import 'package:flutter_166/Eid_Practices/mod_11/cls_1.dart';
+import 'package:flutter_166/Eid_Practices/mod_11/cls_2.dart';
+import 'package:flutter_166/Eid_Practices/mod_11/cls_3.dart';
+import 'package:flutter_166/Eid_Practices/mod_11/custom_widget.dart';
+import 'package:flutter_166/Eid_Practices/mod_12/cls_1.dart';
+import 'package:flutter_166/Eid_Practices/mod_12/cls_2.dart';
+import 'package:flutter_166/Eid_Practices/mod_12/cls_3.dart';
+import 'package:flutter_166/Eid_Practices/mod_9/cls_3.dart';
 import 'package:flutter_166/home.dart';
 import 'package:flutter_166/module_10/class33.dart';
 import 'package:flutter_166/module_10/class_1.dart';
@@ -11,7 +22,10 @@ import 'package:flutter_166/module_11/class_3.dart';
 import 'package:flutter_166/module_11/custom_widget.dart';
 import 'package:flutter_166/module_12/class_1.dart';
 import 'package:flutter_166/module_12/class_2.dart';
+import 'package:flutter_166/module_12/class_3.dart';
 import 'package:flutter_166/module_9/class-3.dart';
+
+import 'module_13/class_1.dart';
 //import 'package:flutter_166/module_9/class-3.da';
 
 class MyAPP extends StatelessWidget {
@@ -20,10 +34,10 @@ class MyAPP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+//debugShowCheckedModeBanner: false,
 
   title: 'Flutter 16',
-  home: Mod_12_Cls_2(),
+  home: WidgetLifeCycle(),
       //theme: ThemeData.dark(),
 
     );
