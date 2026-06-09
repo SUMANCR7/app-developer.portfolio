@@ -23,9 +23,12 @@ import 'package:flutter_166/module_11/custom_widget.dart';
 import 'package:flutter_166/module_12/class_1.dart';
 import 'package:flutter_166/module_12/class_2.dart';
 import 'package:flutter_166/module_12/class_3.dart';
+import 'package:flutter_166/module_13/pages/about.dart';
+import 'package:flutter_166/module_13/pages/home1.dart';
 import 'package:flutter_166/module_9/class-3.dart';
 
 import 'module_13/class_1.dart';
+import 'module_13/class_2.dart';
 //import 'package:flutter_166/module_9/class-3.da';
 
 class MyAPP extends StatelessWidget {
@@ -36,8 +39,22 @@ class MyAPP extends StatelessWidget {
     return MaterialApp(
 //debugShowCheckedModeBanner: false,
 
-  title: 'Flutter 16',
-  home: WidgetLifeCycle(),
+      title: 'Flutter 16',
+
+     //home: Module_13_Class_2(),
+
+      initialRoute: '/mod-13cls-2'   ,
+
+
+      routes: {
+        '/About' : (context) => About_Cls(),//class name
+        '/widgetLife' : (context) => WidgetLifeCycle(),//class name
+        '/mod-13cls-2' : (context) => Module_13_Class_2(),//class name
+
+      },
+
+
+
       //theme: ThemeData.dark(),
 
     );
