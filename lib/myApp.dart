@@ -27,8 +27,10 @@ import 'package:flutter_166/module_13/pages/about.dart';
 import 'package:flutter_166/module_13/pages/home1.dart';
 import 'package:flutter_166/module_9/class-3.dart';
 
+import 'module_13/bottom_nav.dart';
 import 'module_13/class_1.dart';
 import 'module_13/class_2.dart';
+import 'module_13/class_3.dart';
 //import 'package:flutter_166/module_9/class-3.da';
 
 class MyAPP extends StatelessWidget {
@@ -43,13 +45,15 @@ class MyAPP extends StatelessWidget {
 
      //home: Module_13_Class_2(),
 
-      initialRoute: '/mod-13cls-2'   ,
+      initialRoute: '/Bottom_Nav'   ,
 
 
       routes: {
         '/About' : (context) => About_Cls(),//class name
         '/widgetLife' : (context) => WidgetLifeCycle(),//class name
         '/mod-13cls-2' : (context) => Module_13_Class_2(),//class name
+        '/Module_13_Class_3' : (context) => Module_13_Class_3(),
+        '/Bottom_Nav' : (context) => Bottom_Nav(),
 
       },
 
