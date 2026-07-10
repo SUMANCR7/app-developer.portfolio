@@ -36,6 +36,7 @@ import 'module_14/class_1_todo.dart';
 import 'module_14/class_2.dart';
 import 'module_14/class_3.dart';
 import 'module_16/class_2/ui/task_home.dart';
+import 'module_17/CRUD/screens/crud.dart';
 //import 'package:flutter_166/module_9/class-3.da';
 
 class MyAPP extends StatelessWidget {
@@ -55,7 +56,7 @@ class MyAPP extends StatelessWidget {
 
           //home: Module_13_Class_2(),
 
-          initialRoute: '/Module_16_Class_2'   ,
+          initialRoute: '/Mod_17_cl_2'   ,
 
 
           routes: {
@@ -68,6 +69,7 @@ class MyAPP extends StatelessWidget {
             '/Module_14_Class_2' : (context) => Module_14_Class_2(),
             '/Module_14_Class_3' : (context) => Module_14_Class_3(),
             '/Module_16_Class_2' : (context) => Task_Home(),
+            '/Mod_17_cl_2': (context) => Crud_Mod17(),
 
           },
           //theme: ThemeData.dark(),
