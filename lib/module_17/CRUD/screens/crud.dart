@@ -26,15 +26,23 @@ class _Crud_Mod17State extends State<Crud_Mod17> {
     fetchData();
   }
 
-  productDialog(){
+  productDialog(bool isUpdate, {Data ? data}){
     TextEditingController productNameController = TextEditingController();
     TextEditingController productImgController = TextEditingController();
     TextEditingController productQtyController = TextEditingController();
     TextEditingController productUnitPriceController = TextEditingController();
     TextEditingController productTotalPriceController = TextEditingController();
+
+    if(isUpdate){
+      productNameController.text= data!.productName.toString();
+      productImgController.text = data!.img.toString();
+      productQtyController.text = data!.qty.toString();
+      productUnitPriceController.text = data!.unitPrice.toString();
+      productTotalPriceController.text = data!.totalPrice.toString();
+    }
     
     showDialog(context: context, builder: (context)=>AlertDialog(
-      title: Text('Create Product'),
+      title: Text(isUpdate ? 'Edit product' : 'Create product'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -83,13 +91,29 @@ class _Crud_Mod17State extends State<Crud_Mod17> {
             children: [
               TextButton(onPressed: (){Navigator.pop(context);}, child: Text('Cancel')),
             ElevatedButton(onPressed: () async {
-              productController.createProduct(Data(
-                productName: productNameController.text,
-                img: productImgController.text,
-                qty: int.parse (productQtyController.text),
-                unitPrice: int.parse(productUnitPriceController.text),
-                totalPrice:int.parse (productTotalPriceController.text),
-              ));
+
+              if(isUpdate){
+                productController.updateProduct(data!.sId.toString(),Data(
+                  productName: productNameController.text,
+                  img: productImgController.text,
+                  qty: int.parse (productQtyController.text),
+                  unitPrice: int.parse(productUnitPriceController.text),
+                  totalPrice:int.parse (productTotalPriceController.text),
+                ));
+               await fetchData();
+              }else{
+                productController.createProduct(Data(
+                  productName: productNameController.text,
+                  img: productImgController.text,
+                  qty: int.parse (productQtyController.text),
+                  unitPrice: int.parse(productUnitPriceController.text),
+                  totalPrice:int.parse (productTotalPriceController.text),
+                ));
+
+              }
+
+
+
               Navigator.pop(context);
               await fetchData();
               }, child: Text('Submit')),
@@ -132,8 +156,22 @@ class _Crud_Mod17State extends State<Crud_Mod17> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    IconButton(onPressed: (){}, icon: Icon(Icons.edit_note,color: Colors.grey,)),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.delete,color: Colors.red,)),
+                    IconButton(onPressed: (){
+                      productDialog(true,data: item);
+                    }, icon: Icon(Icons.edit_note,color: Colors.grey,)),
+                    IconButton(onPressed: () async {
+                      productController.deleteProduct(item.sId.toString()).then((value) async {
+                        if(value){
+                        await  fetchData();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Product deleted',textAlign: TextAlign.center,),));
+                        }else{
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('something wrong try again'))
+                          );
+                        }
+                      });
+                    }, icon: Icon(Icons.delete,color: Colors.red,)),
                   ],
                 )
 
@@ -143,7 +181,7 @@ class _Crud_Mod17State extends State<Crud_Mod17> {
           }
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
-        productDialog();
+        productDialog(false);
       },child: Icon(Icons.add),),
     );
   }
